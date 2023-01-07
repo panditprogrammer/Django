@@ -21,5 +21,6 @@ from djangotutorials import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',views.index)
+    path('',views.indexHtml),
+    path('index/',views.index),
 ]
