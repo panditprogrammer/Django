@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-    {% comment %}bootstrap css {% endcomment %}
+    {% comment %}bootstrap css{% endcomment %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="static/css/style.css">
   </head>
 
   <body>
@@ -16,25 +17,27 @@
       </div>
 
       <div class="card">
-        <h1 class="card-heading h5">Students</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>SN.</th>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for student in Students %}
+        <h1 class="card-heading h5 p-3">Students</h1>
+        <div class="card-body">
+          <table class="table">
+            <thead>
               <tr>
-                <td>{{ forloop.counter }}</td>
-                <td>{{ student.name }}</td>
-                <td>{{ student.email }}</td>
+                <th>SN.</th>
+                <th>Name</th>
+                <th>Email</th>
               </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {% for student in Students %}
+                <tr>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.email }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
