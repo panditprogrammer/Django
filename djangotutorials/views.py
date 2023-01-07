@@ -6,9 +6,15 @@ def index(request):
 
 # render html file 
 def indexHtml(request):
-    data = {
+    # pass dynamic data  to html template 
+    data = {   
         "title":"This is home  page title.",
-        "pageContent":"This is page content."
+        "pageContent":"This is page content.",
+        "Students":[
+            {"name":"Radhika","email":"radhika@gmail.com"},
+            {"name":"Pradeep","email":"pradeep@gmail.com"},
+            {"name":"Prity","email":"Prity@gmail.com"},
+        ]
     }
     return render(request,"index.html",data)
 
