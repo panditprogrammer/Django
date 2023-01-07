@@ -1,11 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def index(request):
-    return HttpResponse("Hello world")
+def home(request):
+    return render(request,"home.html")
 
 # render html file 
-def indexHtml(request):
+def index(request):
     # pass dynamic data  to html template 
     data = {   
         "title":"This is home  page title.",
