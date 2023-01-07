@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from blogs.models import Blogs
 
 
 # render html file 
@@ -18,7 +19,8 @@ def index(request):
 
 
 def blogs(request):
-    return render(request,"blogs.html")
+    allBlogs = Blogs.objects.all()
+    return render(request,"blogs.html",{"allBlogs":allBlogs})
 
 def about(request):
     return render(request,"about.html")

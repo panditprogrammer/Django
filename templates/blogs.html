@@ -2,6 +2,22 @@
 
 {% block mainContent %}
   <div class="container">
-    <div class="text-center py-4">Blogs Page</div>
+    <div class="row my-4">
+      <div class="col-md-8 p-3">
+        <h1 class="h5">This is Blog title</h1>
+        <img src="" alt="" class="img-fluid py-3" />
+        <p class="py-3">s? Totam ea, dicta architecto necessitatibus perferendis delectus! Dolor excepturi iusto aliquid laborum fugiat itaque eaque cumque cupiditate officiis voluptatum. Blanditiis quia alias tempore, neque culpa omnis ipsa, exercitationem excepturi nulla nesciunt saepe provident labore obcaecati repellat sint reiciendis perspiciatis nam consectetur quae commodi illum reprehenderit quidem! Veritatis molestiae minus iure suscipit ex, facilis tempore doloremque ipsum numquam aliquam dolores officia, fugiat illo culpa exercitationem minima. Minus, ullam repudiandae? Sit velit vel atque est earum, cupiditate recusandae! Eum inventore dolorem dicta iusto est delectus cumque ad voluptates se</p>
+        <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quo officiis reprehenderit laboriosam sint fugit doloremque tenetur dolore eius harum nam et, vel natus molestiae dolores at debitis porro blanditiis quod, obcaecati vero? Vel omnis maiores vitae commodi aliquam, cupiditate, labore, fugiat nihil ex quae repellendus quaerat ab doloribus quos iste inventore quia! Rerum ex provident quibusdam nostrum libero numquam amet non possimud ut, explicabo fugit quod laudantium sint, eligendi quis officia beatae! Deserunt laboriosam est velit autem, voluptatem dolor. Voluptatibus vero, delectus excepturi non nostrum sunt quidem commodi, tenetur ab et, alias dolore adipisci? Repudiandae rerum exercitationem ipsa laboriosam ipsum eligendi numquam iste accusamus ipsam, iusto mollitia nostrum minus voluptate omnis totam illum eveniet reiciendis ut provident. Dolores unde sunt, porro illo commodi labore inventore corporis mollitia nostrum incidunt sequi molestias voluptatibus amet! Sit.</p>
+      </div>
+
+      <div class="col-md-4 p-3">
+        <h1 class="h5">Latest Blogs</h1>
+        <ul class="list-group list-group-flush">
+          {% for blog in allBlogs %}
+            <a href="{{ blog.slug }}" class="list-group-item list-group-item-action">{{ blog.title }}</a>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 {% endblock %}
