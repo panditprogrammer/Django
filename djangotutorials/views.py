@@ -1,8 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def home(request):
-    return render(request,"home.html")
 
 # render html file 
 def index(request):
@@ -18,3 +16,12 @@ def index(request):
     }
     return render(request,"index.html",data)
 
+
+def blogs(request):
+    return render(request,"blogs.html")
+
+def about(request):
+    return render(request,"about.html")
+
+def contact(request):
+    return render(request,"contact.html")

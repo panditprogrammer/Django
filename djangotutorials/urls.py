@@ -22,5 +22,7 @@ from djangotutorials import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('home/',views.home),
+    path('blogs/',views.blogs),
+    path('about/',views.about),
+    path('contact/',views.contact),
 ]
