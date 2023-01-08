@@ -16,14 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from djangotutorials import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index),
-    path('blogs/',views.blogs),
-    path('blogs/<slug>',views.blogsDetails),
-    path('about/',views.about),
-    path('contact/',views.contact),
+    path('',views.index),  # index page
+    path('blogs/',views.blogs), # blog page
+    path('blogs/<slug>',views.blogsDetails), # blog details
+    path('about/',views.about), # about page
+    path('contact/',views.contact), # contact page
 ]
+
+# for access images uploaded folders
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

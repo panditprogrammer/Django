@@ -20,8 +20,8 @@
                 <h1 class="h4"><a href="/blogs/{{ blog.slug }}" class="link-primary text-decoration-none">{{ blog.title }}</a></h1>
                 <p class="text-muted">{{ blog.updated_on }} | {{ blog.category }}</p>
               </div>
-              <p class="">{{ blog.description|slice:':200' }}...</p>
-              <img src="https://source.unsplash.com/300x100/?website" height="100px" alt="" class="img-fluid card-img" />
+              <p class="mb-2">{{ blog.description|slice:':200'| safe }}...</p>
+              <img src="/media/{{blog.img}}" alt="" class="img-fluid card-img" height="100px" />
             </div>
             {% empty %}
             <h1 class="h4">No Result Found!</h1>

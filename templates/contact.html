@@ -1,7 +1,46 @@
 {% extends 'template.html' %}
 
 {% block mainContent %}
-  <div class="container">
-    <div class="text-center py-4">Contact Page</div>
-  </div>
+  <main class="container rounded my-4">
+    <div class="text-center py-4">
+      <h1 class="h5">Please share your valuable feedbacks</h1>
+      <p>Fill this form to contact us.</p>
+      <p class="text-success mb-0 text-center">{{ inserted }}</p>
+    </div>
+    <div class="row my d-flex justify-content-center align-items-center">
+      <form class="col-lg-6 col-md-12 mb-4" method="post">
+        <div class="row mb-2">
+          <div class="col-12">
+            <label for="name" class="form-label">Name <small>(Optional)</small></label>
+            <input type="text" class="form-control" id="name" name="name" />
+            {% csrf_token %}
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12">
+            <label for="Subject" class="form-label">Subject</label>
+            <input type="text" required class="form-control" id="subject" name="subject" />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea name="message" id="message" required class="form-control" style="resize: none;" cols="10" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
 {% endblock %}

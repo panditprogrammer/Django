@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from blogs.models import Blogs
+from blogs.models import Blogs,Contact
 
 
 # render html file 
@@ -15,7 +15,6 @@ def index(request):
         ]
     }
     return render(request,"index.html",data)
-
 
 
 
@@ -47,4 +46,13 @@ def about(request):
 
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        InsertContact = Contact(name=name,email=email,subject=subject,message=message)
+        InsertContact.save() # save to database
+        return redirect('/contact',{"inserted":"Message Sent!"})
+
     return render(request,"contact.html")
