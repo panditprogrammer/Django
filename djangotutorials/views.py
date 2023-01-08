@@ -8,7 +8,6 @@ def index(request):
     # pass dynamic data  to html template 
     data = {   
         "title":"This is home  page title.",
-        "pageContent":"This is page content.",
         "Students":[
             {"name":"Radhika","email":"radhika@gmail.com"},
             {"name":"Pradeep","email":"pradeep@gmail.com"},
@@ -21,8 +20,12 @@ def index(request):
 
 
 def blogs(request):
-    allBlogs = Blogs.objects.all().order_by("-updated_on")
-    return render(request,"blogs.html",{"allBlogs":allBlogs})
+    allBlogs = searchBlogs = Blogs.objects.all().order_by("-updated_on")
+    search = "" 
+    if 'search' in request.GET:
+        search = request.GET['search'].strip()
+        searchBlogs = Blogs.objects.filter(title__contains=search)
+    return render(request,"blogs.html",{"allBlogs":allBlogs,"searchBlogs":searchBlogs,"search":search})
     
 
 

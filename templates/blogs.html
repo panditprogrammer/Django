@@ -2,10 +2,19 @@
 
 {% block mainContent %}
   <main class="container">
+    <form action="" method="get" class="row my-4 form">
+      <div class="col-lg-10 col-md-8 col-sm-12 p-2">
+        <input type="search" class="form-control" name="search" id="search" value="{{ search }}" placeholder="Search" />
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-12 p-2">
+        <button type="submit" class="btn btn-light w-100 border">Search</button>
+      </div>
+    </form>
+
     <div class="row my-4">
-      <div class="col-md-8">
-        <div class="row border">
-          {% for blog in allBlogs %}
+      <div class="col-md-8 border">
+        <div class="row">
+          {% for blog in searchBlogs %}
             <div class="col-12 gy-3 mb-3">
               <div class="">
                 <h1 class="h4"><a href="/blogs/{{ blog.slug }}" class="link-primary text-decoration-none">{{ blog.title }}</a></h1>
@@ -14,6 +23,8 @@
               <p class="">{{ blog.description|slice:':200' }}...</p>
               <img src="https://source.unsplash.com/300x100/?website" height="100px" alt="" class="img-fluid card-img" />
             </div>
+            {% empty %}
+            <h1 class="h4">No Result Found!</h1>
           {% endfor %}
         </div>
       </div>

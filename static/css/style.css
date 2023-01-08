@@ -1,14 +1,123 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
 
-body{
+:root {
+    /* --colorWhite: #ffffff; bs-white */
+    --colorWhite: #000000;
+    --colorPrimary: #1a00c1;
+}
+
+body {
     background: var(--bs-light);
 }
 
-main{
+main {
     background: var(--bs-white) !important;
+}
+
+/* #siteLoader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999 !important;
+    background-color: #00000031;
+    color: var(--colorPrimary) !important;
+  
+  } */
+
+
+.navbar-toggler,
+.form-select,
+.form-control:focus {
+    box-shadow: none !important;
+    border-color: var(--colorPrimary) !important;
+}
+
+.form-label {
+    color: dimgray !important;
+}
+
+.text-primary,.link-primary {
+    color: var(--colorPrimary) !important;
+}
+
+.bg-primary,
+.btn-primary {
+    background-color: var(--colorPrimary) !important;
+    color: var(--bs-white) !important;
+}
+
+a {
+    color: var(--colorPrimary) !important;
+    cursor: pointer;
+}
+
+
+.btn {
+    color: var(--bs-dark);
+}
+
+.border-primary {
+    border-color: var(--colorPrimary) !important;
+}
+
+.active {
+    background-color: var(--colorPrimary) !important;
+    color: var(--bs-white) !important;
+}
+
+.tab-pane.active {
+    background-color: var(--bs-white) !important;
+    color: var(--bs-dark) !important;
+}
+
+.dropdown-item:active {
+    background-color: var(--colorPrimary) !important;
+    color: var(--bs-white) !important;
+}
+
+.list-group-item.active,
+.active>.page-link {
+    background-color: var(--colorPrimary) !important;
+    border-color: var(--colorPrimary) !important;
+    color: var(--bs-white) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--colorPrimary) !important;
+    border-color: var(--colorPrimary) !important;
+}
+
+
+.form-check-input:focus {
+    border-color: var(--bs-dark) !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--bs-light-rgb) !important;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--colorPrimary) !important;
+
+}
+
+section.section {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+
+.page404 {
+    font-size: 5rem;
+
 }
