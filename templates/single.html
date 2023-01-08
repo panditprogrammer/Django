@@ -5,16 +5,14 @@
     <div class="row my-4">
       <div class="col-md-8">
         <div class="row border">
-          {% for blog in allBlogs %}
-            <div class="col-12 gy-3 mb-3">
-              <div class="">
-                <h1 class="h4"><a href="/blogs/{{ blog.slug }}" class="link-primary text-decoration-none">{{ blog.title }}</a></h1>
-                <p class="text-muted">{{ blog.updated_on }} | {{ blog.category }}</p>
-              </div>
-              <p class="">{{ blog.description|slice:':200' }}...</p>
-              <img src="https://source.unsplash.com/300x100/?website" height="100px" alt="" class="img-fluid card-img" />
+          <div class="col-12 gy-3 mb-3">
+            <div class="">
+              <h1 class="h4">{{ blog.title }}</h1>
+              <p class="text-muted">{{ blog.updated_on }} | {{ blog.category }}</p>
             </div>
-          {% endfor %}
+            <img src="https://source.unsplash.com/300x100/?website" height="100px" alt="" class="img-fluid card-img" />
+            <p class="">{{ blog.description }}</p>
+          </div>
         </div>
       </div>
 

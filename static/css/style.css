@@ -6,5 +6,9 @@
 }
 
 body{
-    background: snow;
+    background: var(--bs-light);
+}
+
+main{
+    background: var(--bs-white) !important;
 }
