@@ -46,6 +46,7 @@ def about(request):
 
 
 def contact(request):
+    message = ""
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -53,6 +54,7 @@ def contact(request):
         message = request.POST.get('message')
         InsertContact = Contact(name=name,email=email,subject=subject,message=message)
         InsertContact.save() # save to database
-        return redirect('/contact',{"inserted":"Message Sent!"})
+        message = "Message Sent!"
+        print(request)
 
-    return render(request,"contact.html")
+    return render(request,"contact.html",{"inserted":message})
