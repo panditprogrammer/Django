@@ -8,7 +8,6 @@
     "routes": [
         {
             "src": "build_files.sh",
-            "use": "vercel/static-build",
             "dest": "djangotutorials/wsgi.py"
         }
     ]
