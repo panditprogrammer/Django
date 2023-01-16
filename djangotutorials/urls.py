@@ -28,7 +28,7 @@ urlpatterns = [
     path('blogs/<slug>',views.blogsDetails), # blog details
     path('about/',views.about), # about page
     path('contact/',views.contact), # contact page
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 # for access images uploaded folders
 if settings.DEBUG:
