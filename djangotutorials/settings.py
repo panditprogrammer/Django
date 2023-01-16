@@ -128,8 +128,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # my static files
 STATICFILES_DIRS = [
-    BASE_DIR,"static"
-]
+        os.path.join (BASE_DIR, "static"),
+    ]
 
 # upload image 
 MEDIA_ROOT = BASE_DIR /"media/"
